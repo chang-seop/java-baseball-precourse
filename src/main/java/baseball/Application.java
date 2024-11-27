@@ -22,7 +22,7 @@ public class Application {
             countInit();
             randomInit();
             judgment(customInput()); // 판결
-            ballStrikePrint();
+            printStrikeBall();
         } while (!isReboot());
     }
 
@@ -67,14 +67,16 @@ public class Application {
         }
     }
 
-    public static void ballStrikePrint() {
+    public static void printStrikeBall() {
         StringBuilder sb = new StringBuilder();
         if(ballCount > 0) {
             sb.append(ballCount).append("볼");
         }
 
         if(strikeCount > 0) {
-            if(ballCount > 0) sb.append(" ");
+            if(ballCount > 0) {
+                sb.append(" ");
+            }
             sb.append(strikeCount).append("스트라이크");
         }
 
